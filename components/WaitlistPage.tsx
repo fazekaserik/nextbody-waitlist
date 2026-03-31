@@ -29,6 +29,16 @@ export default function WaitlistPage({ signupCount: initialCount, totalSpots }: 
       />
 
       <div className="relative w-full max-w-lg">
+        {/* Logo */}
+        <div className="flex justify-center mb-10">
+          <span
+            className="text-2xl font-black tracking-[0.15em] uppercase"
+            style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.18em' }}
+          >
+            <span className="text-white">Next</span><span className="text-blue-500">Body</span>
+          </span>
+        </div>
+
         {/* Badge */}
         <div className="flex justify-center mb-8">
           <span className="inline-flex items-center gap-2 border border-blue-500/30 bg-blue-600/10 text-blue-400 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest">

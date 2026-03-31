@@ -17,6 +17,7 @@ export default function WaitlistForm({ onSubmitSuccess }: Props) {
   const [gender, setGender] = useState<Gender | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [readOnly, setReadOnly] = useState(true)
 
   const handleStep1 = (e: React.FormEvent) => {
     e.preventDefault()
@@ -79,18 +80,21 @@ export default function WaitlistForm({ onSubmitSuccess }: Props) {
       {step === 1 && (
         <form onSubmit={handleStep1} className="flex flex-col sm:flex-row gap-3">
           <input
-            type="email"
+            type="text"
+            inputMode="email"
+            autoComplete="off"
+            readOnly={readOnly}
+            onFocus={() => setReadOnly(false)}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            required
-            className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors text-sm"
+            className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-[#03ac13] focus:ring-1 focus:ring-[#03ac13] transition-colors text-sm"
           />
           <button
             type="submit"
             className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3.5 rounded-xl transition-colors whitespace-nowrap text-sm cursor-pointer"
           >
-            Get early access →
+            Join waitlist (get FREE access at launch)
           </button>
         </form>
       )}

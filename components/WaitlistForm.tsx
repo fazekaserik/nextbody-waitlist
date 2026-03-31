@@ -90,7 +90,7 @@ export default function WaitlistForm({ onSubmitSuccess }: Props) {
             type="submit"
             className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3.5 rounded-xl transition-colors whitespace-nowrap text-sm cursor-pointer"
           >
-            Join waitlist (get FREE access at launch)
+            Join Waitlist (Get Free Access At Launch)
           </button>
         </form>
       )}

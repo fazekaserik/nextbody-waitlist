@@ -41,10 +41,21 @@ export default function WaitlistPage({ signupCount: initialCount, totalSpots }: 
 
         {/* Badge */}
         <div className="flex justify-center mb-8">
-          <span className="inline-flex items-center gap-2 border border-blue-500/30 bg-blue-600/10 text-blue-400 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-            Only 200 free spots available
-          </span>
+          <div className="relative inline-flex items-center gap-2.5 px-5 py-2 rounded-full"
+            style={{
+              background: 'linear-gradient(135deg, rgba(59,130,246,0.12) 0%, rgba(99,102,241,0.08) 100%)',
+              border: '1px solid rgba(99,130,246,0.35)',
+              boxShadow: '0 0 18px rgba(59,130,246,0.15), inset 0 1px 0 rgba(255,255,255,0.06)',
+            }}>
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-60" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500" />
+            </span>
+            <span className="text-xs font-bold tracking-[0.2em] uppercase"
+              style={{ background: 'linear-gradient(90deg, #93c5fd, #c4b5fd)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              Only 200 Free Spots Available
+            </span>
+          </div>
         </div>
 
         {/* Headline */}

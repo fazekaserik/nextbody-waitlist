@@ -79,12 +79,12 @@ export default function WaitlistForm({ onSubmitSuccess }: Props) {
       {step === 1 && (
         <form onSubmit={handleStep1} className="flex flex-col sm:flex-row gap-3">
           <input
-            type="email"
+            type="text"
+            inputMode="email"
+            autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            required
-            style={{ colorScheme: 'dark' }}
             className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-[#03ac13] focus:ring-1 focus:ring-[#03ac13] transition-colors text-sm"
           />
           <button

@@ -35,7 +35,7 @@ export default function WaitlistPage({ signupCount: initialCount, totalSpots }: 
             className="text-2xl font-black tracking-[0.15em] uppercase"
             style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.18em' }}
           >
-            <span className="text-white">Next</span><span className="text-blue-500">Body</span>
+            <span className="text-white">Next</span><span className="text-white">Body</span>
           </span>
         </div>
 

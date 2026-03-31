@@ -10,3 +10,18 @@ body {
   font-family: 'DM Sans', sans-serif;
   min-height: 100vh;
 }
+
+/* Override browser yellow for valid email input */
+input[type="email"]:valid:not(:placeholder-shown) {
+  background-color: rgba(34, 197, 94, 0.08) !important;
+  border-color: rgb(34, 197, 94) !important;
+  box-shadow: 0 0 0 1px rgb(34, 197, 94) !important;
+}
+
+input[type="email"]:-webkit-autofill,
+input[type="email"]:-webkit-autofill:hover,
+input[type="email"]:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #0d1a0d inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-color: rgb(34, 197, 94) !important;
+}

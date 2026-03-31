@@ -17,7 +17,6 @@ export default function WaitlistForm({ onSubmitSuccess }: Props) {
   const [gender, setGender] = useState<Gender | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [readOnly, setReadOnly] = useState(true)
 
   const handleStep1 = (e: React.FormEvent) => {
     e.preventDefault()
@@ -80,15 +79,12 @@ export default function WaitlistForm({ onSubmitSuccess }: Props) {
       {step === 1 && (
         <form onSubmit={handleStep1} className="flex flex-col sm:flex-row gap-3">
           <input
-            type="text"
-            inputMode="email"
-            autoComplete="off"
-            readOnly={readOnly}
-            onFocus={() => setReadOnly(false)}
+            type="email"
+            autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-[#03ac13] focus:ring-1 focus:ring-[#03ac13] transition-colors text-sm"
+            className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-white/30 transition-colors text-sm"
           />
           <button
             type="submit"

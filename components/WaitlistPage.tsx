@@ -60,9 +60,22 @@ export default function WaitlistPage({ signupCount: initialCount, totalSpots }: 
         </h1>
 
         {/* Subtext */}
-        <p className="text-center text-white/50 text-base leading-relaxed mb-10 max-w-sm mx-auto">
-          AI analyzes your current body and shows your future transformation — before you even start.
-        </p>
+        <div className="mb-10 max-w-md mx-auto space-y-2.5">
+          {[
+            'AI analyzes your body and gives you a personalized workout & diet plan',
+            'Rates your physique potential and shows exactly what you can achieve',
+            'Generates your future transformation at 1, 3 and 6 months — before you even start',
+          ].map((line) => (
+            <div key={line} className="flex items-start gap-2.5">
+              <span className="mt-1 w-4 h-4 flex-shrink-0 rounded-full bg-blue-600/20 flex items-center justify-center">
+                <svg className="w-2.5 h-2.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <p className="text-white/55 text-sm leading-relaxed">{line}</p>
+            </div>
+          ))}
+        </div>
 
         {/* Card */}
         <div className="bg-white/[0.03] border border-white/8 rounded-2xl p-6 sm:p-8">

@@ -17,6 +17,7 @@ export default function WaitlistForm({ onSubmitSuccess }: Props) {
   const [gender, setGender] = useState<Gender | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [readOnly, setReadOnly] = useState(true)
 
   const handleStep1 = (e: React.FormEvent) => {
     e.preventDefault()
@@ -82,6 +83,8 @@ export default function WaitlistForm({ onSubmitSuccess }: Props) {
             type="text"
             inputMode="email"
             autoComplete="off"
+            readOnly={readOnly}
+            onFocus={() => setReadOnly(false)}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"

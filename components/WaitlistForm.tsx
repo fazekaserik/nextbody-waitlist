@@ -81,7 +81,7 @@ export default function WaitlistForm({ onSubmitSuccess }: Props) {
           <input
             type="text"
             inputMode="email"
-            autoComplete="email"
+            autoComplete="off"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"

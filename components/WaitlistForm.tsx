@@ -84,7 +84,7 @@ export default function WaitlistForm({ onSubmitSuccess }: Props) {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             required
-            style={{ '--tw-ring-color': '#03ac13' } as React.CSSProperties}
+            style={{ colorScheme: 'dark' }}
             className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-[#03ac13] focus:ring-1 focus:ring-[#03ac13] transition-colors text-sm"
           />
           <button

@@ -20,8 +20,11 @@ input[type="email"]:valid:not(:placeholder-shown) {
 
 input[type="email"]:-webkit-autofill,
 input[type="email"]:-webkit-autofill:hover,
-input[type="email"]:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 1000px #020e02 inset !important;
+input[type="email"]:-webkit-autofill:focus,
+input[type="email"]:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #000000 inset !important;
   -webkit-text-fill-color: #ffffff !important;
   border-color: #03ac13 !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+  color-scheme: dark;
 }

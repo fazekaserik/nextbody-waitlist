@@ -1,9 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
 import { supabase, WaitlistEntry } from '@/lib/supabase'
-
-const resend = new Resend(process.env.RESEND_API_KEY)
-const notificationEmail = process.env.NOTIFICATION_EMAIL!
 
 export async function POST(req: NextRequest) {
   const body: WaitlistEntry = await req.json()
@@ -23,31 +19,6 @@ export async function POST(req: NextRequest) {
     }
     return NextResponse.json({ error: 'Failed to join waitlist' }, { status: 500 })
   }
-
-  await resend.emails.send({
-    from: 'NextBody Waitlist <onboarding@resend.dev>',
-    to: notificationEmail,
-    subject: `New waitlist signup: ${email}`,
-    html: `
-      <div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:24px;">
-        <h2 style="margin:0 0 16px;font-size:20px;">🎉 New Waitlist Signup</h2>
-        <table style="width:100%;border-collapse:collapse;">
-          <tr>
-            <td style="padding:10px 0;color:#666;width:80px;">Email</td>
-            <td style="padding:10px 0;font-weight:600;">${email}</td>
-          </tr>
-          <tr>
-            <td style="padding:10px 0;color:#666;">Goal</td>
-            <td style="padding:10px 0;font-weight:600;">${goal === 'fat_loss' ? 'Fat Loss' : 'Muscle Gain'}</td>
-          </tr>
-          <tr>
-            <td style="padding:10px 0;color:#666;">Gender</td>
-            <td style="padding:10px 0;font-weight:600;">${gender === 'male' ? 'Male' : 'Female'}</td>
-          </tr>
-        </table>
-      </div>
-    `,
-  })
 
   return NextResponse.json({ success: true }, { status: 201 })
 }

@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import WaitlistForm from './WaitlistForm'
 
 interface Props {
@@ -8,14 +7,11 @@ interface Props {
   totalSpots: number
 }
 
-export default function WaitlistPage({ signupCount: initialCount, totalSpots }: Props) {
-  const [signupCount, setSignupCount] = useState(initialCount)
-
+export default function WaitlistPage({ totalSpots }: Props) {
+  const signupCount = 146
   const progressPct = Math.min((signupCount / totalSpots) * 100, 100)
 
-  const handleSubmitSuccess = () => {
-    setSignupCount((prev) => prev + 1)
-  }
+  const handleSubmitSuccess = () => {}
 
   return (
     <main className="min-h-screen bg-black flex items-center justify-center px-4 py-16">
@@ -41,21 +37,9 @@ export default function WaitlistPage({ signupCount: initialCount, totalSpots }: 
 
         {/* Badge */}
         <div className="flex justify-center mb-8">
-          <div className="relative inline-flex items-center gap-2.5 px-5 py-2 rounded-full"
-            style={{
-              background: 'linear-gradient(135deg, rgba(59,130,246,0.12) 0%, rgba(99,102,241,0.08) 100%)',
-              border: '1px solid rgba(99,130,246,0.35)',
-              boxShadow: '0 0 18px rgba(59,130,246,0.15), inset 0 1px 0 rgba(255,255,255,0.06)',
-            }}>
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-60" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500" />
-            </span>
-            <span className="text-xs font-bold tracking-[0.2em] uppercase"
-              style={{ background: 'linear-gradient(90deg, #93c5fd, #c4b5fd)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              Launching Soon · Apply For Free Access Now
-            </span>
-          </div>
+          <p className="text-white font-black text-sm tracking-[0.18em] uppercase" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            Launching Soon · Apply For Free Access Now
+          </p>
         </div>
 
         {/* Headline */}

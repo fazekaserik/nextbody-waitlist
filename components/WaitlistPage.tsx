@@ -36,9 +36,19 @@ export default function WaitlistPage({ totalSpots }: Props) {
         </div>
 
         {/* Badge */}
-        <div className="flex justify-center mb-8">
-          <p className="text-white font-black text-sm tracking-[0.18em] uppercase" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-            Launching Soon · Apply For Free Access Now
+        <div className="flex flex-col items-center gap-2 mb-8">
+          <div className="flex items-center gap-3">
+            <div className="h-px w-8 bg-gradient-to-r from-transparent to-blue-500/60" />
+            <span className="text-blue-400 text-[10px] font-bold tracking-[0.35em] uppercase">
+              Launching Soon
+            </span>
+            <div className="h-px w-8 bg-gradient-to-l from-transparent to-blue-500/60" />
+          </div>
+          <p
+            className="text-white font-black text-lg sm:text-xl tracking-[0.12em] uppercase text-center"
+            style={{ fontFamily: 'Montserrat, sans-serif', textShadow: '0 0 40px rgba(59,130,246,0.3)' }}
+          >
+            Apply For Free Access Now
           </p>
         </div>
 

@@ -53,7 +53,7 @@ export default function WaitlistPage({ signupCount: initialCount, totalSpots }: 
             </span>
             <span className="text-xs font-bold tracking-[0.2em] uppercase"
               style={{ background: 'linear-gradient(90deg, #93c5fd, #c4b5fd)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              Only 200 Free Spots Available
+              Launching Soon · Apply For Free Access Now
             </span>
           </div>
         </div>

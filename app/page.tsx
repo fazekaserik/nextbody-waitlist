@@ -8,9 +8,9 @@ async function getSignupCount(): Promise<number> {
     const { count } = await supabase
       .from('waitlist')
       .select('*', { count: 'exact', head: true })
-    return count || 164
+    return count || 146
   } catch {
-    return 164
+    return 146
   }
 }
 
